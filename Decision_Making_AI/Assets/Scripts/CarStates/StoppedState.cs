@@ -56,6 +56,9 @@ public class StoppedState : BaseState<CarStateManager.CarState>
 
     public override void UpdateState()
     {
+        if (carStateManager.currentIntersection == null)
+            return;
+
        if(carStateManager.currentIntersection.currentCars == 0)
         {
             bStartDriving = true;
